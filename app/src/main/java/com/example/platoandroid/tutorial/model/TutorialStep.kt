@@ -5,8 +5,10 @@ import com.example.platoandroid.tutorial.ui.displaysteps.DefaultTutorialStepUiSt
 import com.example.platoandroid.tutorial.ui.displaysteps.IntroTutorialStepBlock
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.LearningComposeBasicsTutorialStepBlock
 import com.example.platoandroid.tutorial.ui.displaysteps.WelcomeTutorialStepBlock
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.ComposeOverviewSubState
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.LearnMoreAboutComposeSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.ComposeOverviewSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.CreateYourOwnComposableSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.UsingComposeDocumentationSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.TryAComposablePartTwoSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.TryAComposableSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.ComposeStylesTutorialStepUiState
 
@@ -80,9 +82,11 @@ sealed class TutorialStep {
     override val id: String = COMPOSE_BASICS_STEP_ID,
   ) : TutorialStep() {
     override val subSteps: List<TutorialSubStep> = listOf(
-      ComposeOverviewSubState(),
+      ComposeOverviewSubStepUiState(),
       TryAComposableSubStepUiState(),
-      LearnMoreAboutComposeSubStepUiState(),
+      TryAComposablePartTwoSubStepUiState(),
+      UsingComposeDocumentationSubStepUiState(),
+      CreateYourOwnComposableSubStepUiState(),
     )
     override val previousStep: TutorialStep = Intro(this)
     override fun getUiState(): TutorialStepUiState = LearningComposeBasicsTutorialStepBlock()

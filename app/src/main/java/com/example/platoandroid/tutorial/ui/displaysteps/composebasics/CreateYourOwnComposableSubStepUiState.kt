@@ -13,12 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialSubStepBlockState
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.help.DebuggingMyFirstComposableHint
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.help.CreateYourOwnComposableHint
 import com.example.platoandroid.tutorial.ui.displaysteps.help.HelpButton
-import com.example.platoandroid.tutorial.ui.displaysteps.help.HowToBuildTheApp
-import com.example.platoandroid.tutorial.ui.displaysteps.help.HowToSearchForCode
+import com.example.platoandroid.tutorial.ui.displaysteps.help.HowToSearchAFileName
 
-class TryAComposableSubStepUiState : TutorialSubStepBlockState {
+class CreateYourOwnComposableSubStepUiState : TutorialSubStepBlockState {
   @Composable
   override fun displayBlock(onHelpRequest: (request: @Composable () -> Unit) -> Unit, showNextStep: () -> Unit) {
     TutorialStepCard {
@@ -27,34 +26,29 @@ class TryAComposableSubStepUiState : TutorialSubStepBlockState {
         color = MaterialTheme.colors.secondary,
         style = MaterialTheme.typography.subtitle2
       )
-      // Long term, this tutorial code should be extracted to a library, but for now, to not
-      // interfere in the directive to search, we want to break up this string with other
-      // characters so it doesn't confuse their search.
-      Text(text = "Search for this text in the project: 'Ad" + "d your first composable here'")
-      HelpButton(prompt = "remind me how to search for code") {
-        onHelpRequest { HowToSearchForCode() }
-      }
-      Text(text = "Did you find it? When you do, below the comment, type the following:")
+      Text(text = "Now that you know how to add composables, you're going to make one of your own.")
+      Text(text = "We started an example for you called TodoList. To start, add the TodoList component to your test area by adding this code:")
       Text(
-        text = "Text(text = \"Hello World!\")",
+        text = "TodoList(title = \"My Todo List\")",
         color = MaterialTheme.colors.primaryVariant,
         style = MaterialTheme.typography.subtitle2,
         modifier = Modifier.padding(start = 16.dp)
       )
-      Text(text = "Then rebuild the app. When you do, you'll see your new text below! Click \"Next\" once you see it.")
-      HelpButton(prompt = "remind me how to build the app") {
-        onHelpRequest { HowToBuildTheApp() }
+      Text(text = "Next, find the file named TodoList.kt where this is defined and follow the directions there.")
+      HelpButton(prompt = "remind me how to find a file") {
+        onHelpRequest { HowToSearchAFileName() }
       }
+      Text(text = "If you get stuck with the directions in that file, use the \"I need a hint\" button.")
       Row {
         Button(onClick = { showNextStep() }) {
           Text(text = "Next")
         }
         Spacer(modifier = Modifier.width(8.dp))
         Button(
-          onClick = { onHelpRequest { DebuggingMyFirstComposableHint() } },
+          onClick = { onHelpRequest { CreateYourOwnComposableHint() } },
           colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
         ) {
-          Text(text = "I don't see my text")
+          Text(text = "I need a hint")
         }
       }
     }

@@ -11,7 +11,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.platoandroid.tutorial.viewmodel.TutorialRunnerViewModel
 import com.example.platoandroid.ui.TutorialBlock
 import com.example.platoandroid.ui.theme.PlatoAndroidTheme
 
@@ -28,9 +27,14 @@ class MainActivity : ComponentActivity() {
             /**
              * Add your first composable here
              * >> Hey you found it! Nice job!
+             * Whenever you see these *s or the double // lines, it means the
+             * text that follows it is a comment. This text won't run like code,
+             * it's just so you can leave helpful notes like this one :)
              */
+            // YOUR TEST AREA vvv
 
             // ^^^^^ add above ^^^^^
+            // ^^^ YOUR TEST AREA
           }
         }
       }

@@ -14,12 +14,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialSubStepBlockState
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.help.ComposeOverviewAdditionalInfo
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.help.ComposeOverviewHint
 import com.example.platoandroid.tutorial.ui.displaysteps.help.AndroidLibraryExplainedPreview
 import com.example.platoandroid.tutorial.ui.displaysteps.help.FunctionExplained
 import com.example.platoandroid.tutorial.ui.displaysteps.help.HelpButton
 
-class ComposeOverviewSubState : TutorialSubStepBlockState {
+class ComposeOverviewSubStepUiState : TutorialSubStepBlockState {
   @Composable
   override fun displayBlock(onHelpRequest: (request: @Composable () -> Unit) -> Unit, showNextStep: () -> Unit) {
     // val annotatedLinkString: AnnotatedString = buildAnnotatedString {
@@ -54,7 +54,7 @@ class ComposeOverviewSubState : TutorialSubStepBlockState {
         }
         Spacer(modifier = Modifier.width(8.dp))
         Button(
-          onClick = { onHelpRequest { ComposeOverviewAdditionalInfo() } },
+          onClick = { onHelpRequest { ComposeOverviewHint() } },
           colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
         ) {
           Text(text = "No, I'm confused")
