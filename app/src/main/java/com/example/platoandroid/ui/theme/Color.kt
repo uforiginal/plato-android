@@ -9,7 +9,16 @@ val Teal200 = Color(0xFF03DAC5)
 
 val MutedTone = Color(0xFFFFF7F7)
 val MutedToneAccent = Color(0xFFFE525B)
-val FunGreen = Color(0xFF00DC46)
 val FunOrange = Color(0xFFE2941F)
 val PrimaryBlue = Color(0xFF003FFF)
 val VariantBlue = Color(0xFF007AFF)
+
+/**
+ * Hex colors are 6 character codes but all codes should be
+ * prepended with 0xFF - for example, look at VariantBlue above.
+ * The hex code for VariantBlue = 007AFF
+ * So the color value we pass for VariantBlue = 0xFF007AFF
+ */
+// Add your color here vvv
+
+// ^^^ Add you color here

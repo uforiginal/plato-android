@@ -7,6 +7,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
+// These are the colors that will apply when in dark mode
 private val DarkColorPalette = darkColors(
   primary = Purple200,
   primaryVariant = Purple700,
@@ -15,8 +16,9 @@ private val DarkColorPalette = darkColors(
   onPrimary = Color.White,
 )
 
+// These are the colors that will apply when in light mode
 private val LightColorPalette = lightColors(
-  primary = MutedTone,
+  primary = MutedTone, // <<<<<<< Hint, hint, here's the one you want to change! Replace 'MutedTone'
   primaryVariant = FunOrange,
   secondary = PrimaryBlue,
   secondaryVariant = VariantBlue,

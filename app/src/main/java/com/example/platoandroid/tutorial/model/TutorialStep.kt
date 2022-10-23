@@ -10,7 +10,9 @@ import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.CreateYou
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.UsingComposeDocumentationSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.TryAComposablePartTwoSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.TryAComposableSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.ColorsSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.ComposeStylesTutorialStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.ThemesSubStepUiState
 
 sealed class TutorialStep {
   open val id: String = DEFAULT_STEP_ID
@@ -96,6 +98,10 @@ sealed class TutorialStep {
     override val nextStep: TutorialStep = LearningButtonHandlers(),
     override val id: String = COMPOSE_STYLES_STEP_ID,
   ) : TutorialStep() {
+    override val subSteps: List<TutorialSubStep> = listOf(
+      ColorsSubStepUiState(),
+      ThemesSubStepUiState(),
+    )
     override val previousStep: TutorialStep = LearningComposeBasics(this)
     override fun getUiState(): TutorialStepUiState = ComposeStylesTutorialStepUiState()
   }
