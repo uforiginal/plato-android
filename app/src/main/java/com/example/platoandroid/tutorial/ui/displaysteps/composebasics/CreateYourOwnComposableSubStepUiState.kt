@@ -27,13 +27,14 @@ class CreateYourOwnComposableSubStepUiState : TutorialSubStepBlockState {
         style = MaterialTheme.typography.subtitle2
       )
       Text(text = "Now that you know how to add composables, you're going to make one of your own.")
-      Text(text = "We started an example for you called TodoList. To start, add the TodoList component to your test area by adding this code:")
+      Text(text = "We started an example for you called TodoList. To start, we are going to add the composeable we have already started for you. Add the TodoList component to your test area by adding this code:")
       Text(
         text = "TodoList(title = \"My Todo List\")",
         color = MaterialTheme.colors.primaryVariant,
         style = MaterialTheme.typography.subtitle2,
         modifier = Modifier.padding(start = 16.dp)
       )
+      Text(text = "Adding this is not much different then when you added a Text or Button composable but since this is one we define in our own code, we are going to get to take a look inside of it.")
       Text(text = "Next, find the file named TodoList.kt where this is defined and follow the directions there.")
       HelpButton(prompt = "remind me how to find a file") {
         onHelpRequest { HowToSearchAFileName() }

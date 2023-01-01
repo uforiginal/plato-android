@@ -20,7 +20,7 @@ import androidx.compose.runtime.Composable
  * is not just a normal function, it's a special one whose purpose is to be
  * a UI building block.
  *
- * Below the "Create a new composable here" comment line, create a function
+ * Below the "Create a new composable here" comment line below, create a function
  * named TodoListItem and annotate it as @Composable to tell the compiler
  * it will be another one of our UI building blocks.
  *
@@ -36,7 +36,8 @@ import androidx.compose.runtime.Composable
  * TodoListItem composable, add a Text composable where text = taskName.
  *
  * Finally, add a few of your TodoListItem composables inside of the TodoList
- * composable.
+ * composable. You can give them made up taskNames for now as we will handle
+ * letting the user input those values later on.
  */
 @Composable
 fun TodoList(title: String) {

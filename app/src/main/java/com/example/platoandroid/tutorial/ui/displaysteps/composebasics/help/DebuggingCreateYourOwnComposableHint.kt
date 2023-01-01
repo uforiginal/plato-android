@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun CreateYourOwnComposableHint() {
+fun DebuggingCreateYourOwnComposableHint() {
   Column {
     Text(text = "Not to give too much of a hint, but here is the end goal of what you're looking for for the TodoListItem:")
     Spacer(modifier = Modifier.height(8.dp))
