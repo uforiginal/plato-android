@@ -1,4 +1,4 @@
-package com.example.platoandroid.tutorial.ui.displaysteps.composebasics
+package com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer

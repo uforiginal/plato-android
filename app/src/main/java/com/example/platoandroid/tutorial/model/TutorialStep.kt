@@ -3,22 +3,20 @@ package com.example.platoandroid.tutorial.model
 import androidx.lifecycle.MutableLiveData
 import com.example.platoandroid.tutorial.ui.displaysteps.DefaultTutorialStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.IntroTutorialStepBlock
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.LearningComposeBasicsTutorialStepBlock
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.LearningComposeBasicsTutorialStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.WelcomeTutorialStepBlock
-import com.example.platoandroid.tutorial.ui.displaysteps.buttonsandstate.ButtonsAndStateStepUiState
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.ComposeOverviewSubStepUiState
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.CreateYourOwnComposableSubStepTwoUiState
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.CreateYourOwnComposableSubStepUiState
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.UsingComposeDocumentationSubStepUiState
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.TryAComposablePartTwoSubStepUiState
-import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.TryAComposableSubStepUiState
-import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.ColorsSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.ComposeStylesTutorialStepUiState
-import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.ThemesSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.eight_filestructure.FileStructureTutorialStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.ViewModelsTutorialStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.four_state.StateTutorialStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.nine_activites.ActivitiesTutorialStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.seven_architechture.ArchitechtureTutorialStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.six_textfields.TextFieldsTutorialStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.three_buttons.ButtonsTutorialStepUiState
 
 sealed class TutorialStep {
   open val id: String = DEFAULT_STEP_ID
-  open val subSteps: List<TutorialSubStep> = emptyList()
+  val subSteps: List<TutorialSubStep> get() = getUiState().getSubSteps()
   private var currentSubStepIndex: Int = -1
   private var _currentSubStep: MutableLiveData<TutorialSubStep?> = MutableLiveData(null)
   val currentSubStep: MutableLiveData<TutorialSubStep?>
@@ -85,67 +83,71 @@ sealed class TutorialStep {
     override val nextStep: TutorialStep = LearningComposeStyles(),
     override val id: String = COMPOSE_BASICS_STEP_ID,
   ) : TutorialStep() {
-    override val subSteps: List<TutorialSubStep> = listOf(
-      ComposeOverviewSubStepUiState(),
-      TryAComposableSubStepUiState(),
-      TryAComposablePartTwoSubStepUiState(),
-      UsingComposeDocumentationSubStepUiState(),
-      CreateYourOwnComposableSubStepUiState(),
-      CreateYourOwnComposableSubStepTwoUiState(),
-    )
     override val previousStep: TutorialStep = Intro(this)
-    override fun getUiState(): TutorialStepUiState = LearningComposeBasicsTutorialStepBlock()
+    override fun getUiState(): TutorialStepUiState = LearningComposeBasicsTutorialStepUiState()
   }
 
   data class LearningComposeStyles(
-    override val nextStep: TutorialStep = LearningButtonsAndState(),
+    override val nextStep: TutorialStep = LearningButtonHandlers(),
     override val id: String = COMPOSE_STYLES_STEP_ID,
   ) : TutorialStep() {
-    override val subSteps: List<TutorialSubStep> = listOf(
-      ColorsSubStepUiState(),
-      ThemesSubStepUiState(),
-    )
     override val previousStep: TutorialStep = LearningComposeBasics(this)
     override fun getUiState(): TutorialStepUiState = ComposeStylesTutorialStepUiState()
   }
 
-  data class LearningButtonsAndState(
-    override val nextStep: TutorialStep = LearningViewModels(),
+  data class LearningButtonHandlers(
+    override val nextStep: TutorialStep = LearningState(),
     override val id: String = BUTTONS_STEP_ID,
   ) : TutorialStep() {
     override val previousStep: TutorialStep = LearningComposeStyles(this)
-    override fun getUiState(): TutorialStepUiState = ButtonsAndStateStepUiState()
+    override fun getUiState(): TutorialStepUiState = ButtonsTutorialStepUiState()
+  }
+
+  data class LearningState(
+    override val nextStep: TutorialStep = LearningViewModels(),
+    override val id: String = STATE_STEP_ID,
+  ) : TutorialStep() {
+    override val previousStep: TutorialStep = LearningButtonHandlers(this)
+    override fun getUiState(): TutorialStepUiState = StateTutorialStepUiState()
   }
 
   data class LearningViewModels(
     override val nextStep: TutorialStep = LearningTextFields(),
     override val id: String = VIEW_MODELS_STEP_ID,
   ) : TutorialStep() {
-    override val previousStep: TutorialStep = LearningButtonsAndState(this)
-    override fun getUiState(): TutorialStepUiState = WelcomeTutorialStepBlock()
+    override val previousStep: TutorialStep = LearningState(this)
+    override fun getUiState(): TutorialStepUiState = ViewModelsTutorialStepUiState()
   }
 
   data class LearningTextFields(
-    override val nextStep: TutorialStep = LearningActivities(),
+    override val nextStep: TutorialStep = LearningArchitecture(),
     override val id: String = TEXT_FIELDS_STEP_ID,
   ) : TutorialStep() {
     override val previousStep: TutorialStep = LearningViewModels(this)
-    override fun getUiState(): TutorialStepUiState = WelcomeTutorialStepBlock()
-  }
-
-  data class LearningActivities(
-    override val nextStep: TutorialStep = LearningArchitecture(),
-    override val id: String = ACTIVITIES_STEP_ID,
-  ) : TutorialStep() {
-    override val previousStep: TutorialStep = LearningTextFields(this)
-    override fun getUiState(): TutorialStepUiState = WelcomeTutorialStepBlock()
+    override fun getUiState(): TutorialStepUiState = TextFieldsTutorialStepUiState()
   }
 
   data class LearningArchitecture(
+    override val nextStep: TutorialStep = LearningFileStructure(),
     override val id: String = ARCHITECTURE_STEP_ID,
   ) : TutorialStep() {
-    override val previousStep: TutorialStep = LearningActivities(this)
-    override fun getUiState(): TutorialStepUiState = WelcomeTutorialStepBlock()
+    override val previousStep: TutorialStep = LearningTextFields(this)
+    override fun getUiState(): TutorialStepUiState = ArchitechtureTutorialStepUiState()
+  }
+
+  data class LearningFileStructure(
+    override val nextStep: TutorialStep = LearningActivities(),
+    override val id: String = FILE_STRUCTURE_STEP_ID,
+  ) : TutorialStep() {
+    override val previousStep: TutorialStep = LearningArchitecture(this)
+    override fun getUiState(): TutorialStepUiState = FileStructureTutorialStepUiState()
+  }
+
+  data class LearningActivities(
+    override val id: String = ACTIVITIES_STEP_ID,
+  ) : TutorialStep() {
+    override val previousStep: TutorialStep = LearningFileStructure(this)
+    override fun getUiState(): TutorialStepUiState = ActivitiesTutorialStepUiState()
   }
 
   companion object {
@@ -154,12 +156,13 @@ sealed class TutorialStep {
     const val INTRO_STEP_ID = "INTRO_STEP_ID"
     const val COMPOSE_BASICS_STEP_ID = "COMPOSE_BASICS_STEP_ID"
     const val COMPOSE_STYLES_STEP_ID = "COMPOSE_STYLES_STEP_ID"
-    const val BUTTONS_STEP_ID = "BUTTONS_AND_STATE_STEP_ID"
-    const val VIEW_MODELS_STEP_ID = "VIEW_MODELS_STEP_ID "
+    const val BUTTONS_STEP_ID = "BUTTONS_STEP_ID"
+    const val STATE_STEP_ID = "STATE_STEP_ID"
+    const val VIEW_MODELS_STEP_ID = "VIEW_MODELS_STEP_ID"
     const val TEXT_FIELDS_STEP_ID = "TEXT_FIELDS_STEP_ID"
+    const val ARCHITECTURE_STEP_ID = "ARCHITECTURE_STEP_ID"
     const val FILE_STRUCTURE_STEP_ID = "FILE_STRUCTURE_STEP_ID"
     const val ACTIVITIES_STEP_ID = "ACTIVITIES_STEP_ID"
-    const val ARCHITECTURE_STEP_ID = "ARCHITECTURE_STEP_ID"
 
     fun getFromId(
       id: String,
@@ -170,11 +173,13 @@ sealed class TutorialStep {
         INTRO_STEP_ID -> Intro().withSubStep(subStepId)
         COMPOSE_BASICS_STEP_ID -> LearningComposeBasics().withSubStep(subStepId)
         COMPOSE_STYLES_STEP_ID -> LearningComposeStyles().withSubStep(subStepId)
-        BUTTONS_STEP_ID -> LearningButtonsAndState().withSubStep(subStepId)
+        BUTTONS_STEP_ID -> LearningButtonHandlers().withSubStep(subStepId)
+        STATE_STEP_ID -> LearningState().withSubStep(subStepId)
         VIEW_MODELS_STEP_ID -> LearningViewModels().withSubStep(subStepId)
         TEXT_FIELDS_STEP_ID -> LearningTextFields().withSubStep(subStepId)
-        ACTIVITIES_STEP_ID -> LearningActivities().withSubStep(subStepId)
         ARCHITECTURE_STEP_ID -> LearningArchitecture().withSubStep(subStepId)
+        FILE_STRUCTURE_STEP_ID -> LearningFileStructure().withSubStep(subStepId)
+        ACTIVITIES_STEP_ID -> LearningActivities().withSubStep(subStepId)
         else -> Welcome()
       }
     }

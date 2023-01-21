@@ -10,9 +10,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialStepUiState
+import com.example.platoandroid.tutorial.model.TutorialSubStep
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeOverviewSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.CreateYourOwnComposableSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.TryAComposablePartTwoSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.TryAComposableSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.UsingComposeDocumentationSubStepUiState
 
-class LearningComposeBasicsTutorialStepBlock : TutorialStepUiState {
+class LearningComposeBasicsTutorialStepUiState : TutorialStepUiState {
   @Composable
   override fun displayBlock(onHelpRequest: (request: @Composable () -> Unit) -> Unit, showNextStep: () -> Unit) {
     TutorialStepCard {
@@ -60,4 +66,12 @@ class LearningComposeBasicsTutorialStepBlock : TutorialStepUiState {
       }
     }
   }
+
+  override fun getSubSteps() : List<TutorialSubStep> = listOf(
+    ComposeOverviewSubStepUiState(),
+    TryAComposableSubStepUiState(),
+    TryAComposablePartTwoSubStepUiState(),
+    UsingComposeDocumentationSubStepUiState(),
+    CreateYourOwnComposableSubStepUiState(),
+  )
 }

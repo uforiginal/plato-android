@@ -1,4 +1,4 @@
-package com.example.platoandroid.tutorial.ui.displaysteps.composebasics
+package com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -22,9 +22,6 @@ import com.example.platoandroid.tutorial.ui.displaysteps.help.HelpButton
 class ComposeOverviewSubStepUiState : TutorialSubStepBlockState {
   @Composable
   override fun displayBlock(onHelpRequest: (request: @Composable () -> Unit) -> Unit, showNextStep: () -> Unit) {
-    // val annotatedLinkString: AnnotatedString = buildAnnotatedString {
-    //
-    // }
     TutorialStepCard {
       Text(
         text = "Jetpack Compose",

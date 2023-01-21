@@ -8,7 +8,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialStepUiState
+import com.example.platoandroid.tutorial.model.TutorialSubStep
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesEight
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesEleven
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesFive
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesFour
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesNine
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesOne
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesSeven
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesSix
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesTen
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesThree
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesTwelve
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesTwo
 
 class ComposeStylesTutorialStepUiState : TutorialStepUiState {
   @Composable
@@ -22,4 +35,19 @@ class ComposeStylesTutorialStepUiState : TutorialStepUiState {
       }
     }
   }
+
+  override fun getSubSteps(): List<TutorialSubStep> = listOf(
+    StylesOne(),
+    StylesTwo(),
+    StylesThree(),
+    StylesFour(),
+    StylesFive(),
+    StylesSix(),
+    StylesSeven(),
+    StylesEight(),
+    StylesNine(),
+    StylesTen(),
+    StylesEleven(),
+    StylesTwelve(),
+  )
 }
