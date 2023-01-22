@@ -1,7 +1,12 @@
 package com.example.platoandroid.tutorial.ui.displaysteps.four_state
 
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialStepUiState
 import com.example.platoandroid.tutorial.model.TutorialSubStep
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
@@ -22,9 +27,16 @@ class StateTutorialStepUiState : TutorialStepUiState {
   override fun displayBlock(onHelpRequest: (request: @Composable () -> Unit) -> Unit, showNextStep: () -> Unit) {
     TutorialStepCard(title = "What is State?") {
       Text(text = "State in an app is any value that can change over time.")
+      Spacer(modifier = Modifier.height(8.dp))
       Text(text = "When we talk about “State” in mobile development - think about the current “State” of the app. ")
+      Spacer(modifier = Modifier.height(8.dp))
       Text(text = "For example, if you have an app that lets a user roll a dice and that dice is currently displaying a face with 2 dots, the “state” of the dice's value may be represented as 2.")
+      Spacer(modifier = Modifier.height(8.dp))
       Text(text = "As with the dice example, state is a value that can be changed as certain actions take place within the app but always represents what the current value the app should be reflecting is.")
+      Spacer(modifier = Modifier.height(8.dp))
+      Button(onClick = { showNextStep() }) {
+        Text(text = "How do we fix this?")
+      }
     }
   }
 

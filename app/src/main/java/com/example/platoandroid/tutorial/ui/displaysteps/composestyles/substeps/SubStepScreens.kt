@@ -2,6 +2,7 @@ package com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -9,6 +10,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontWeight.Companion
 import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialSubStepBlockState
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
@@ -33,9 +36,14 @@ class StylesOne : TutorialSubStepBlockState {
       HelpButton("remind me what composables are") {
         onHelpRequest { WhatIsAComposable() }
       }
-      Text(text = "Modifiers are a data type that lets a modify the look of a composable.")
+      Text(text = "Modifiers are a data type that lets us modify the look of a composable.")
+      Spacer(modifier = Modifier.height(8.dp))
       Text(text = "Keep the documentation on Modifiers handy as we go through the next few steps:")
-      Text(text = "https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier")
+      Text(
+        text = "https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier",
+        color = MaterialTheme.colors.primaryVariant,
+      )
+      Spacer(modifier = Modifier.height(8.dp))
       Row {
         Button(onClick = { showNextStep() }) {
           Text(text = "Cool, how do we use them?")
@@ -65,7 +73,11 @@ class StylesTwo : TutorialSubStepBlockState {
         text = "You can visit Androids documentation if you want to understand more about that."
       )
       Text(text = "All you need to know for now is this looks like:")
-      Text(text = "       Modifier.width(16.dp)")
+      Text(
+        text = "       Modifier.width(16.dp)",
+        fontWeight = Companion.Bold,
+        color = MaterialTheme.colors.primaryVariant,
+      )
       Text(text = "In this case, this modifier modifies the width of the composable to be 16 dp")
       HelpButton("what does dp mean?") {
         onHelpRequest { WhatDoesDpMean() }
@@ -89,13 +101,20 @@ class StylesThree : TutorialSubStepBlockState {
       Text(
         text = "In the previous example, we called the “width” extension function. You’ll remember that function return something - in this case, the modifier extension functions return the modifier itself."
       )
+      Spacer(modifier = Modifier.height(8.dp))
       Text(
         text = "Because of this, we can call another extension function on the end of another function because if will be calling the function on the object that was returned by the previous one."
       )
+      Spacer(modifier = Modifier.height(8.dp))
       Text(
         text = "If that confuses you - don’t worry too much about it. The important take away is you can write something like this:"
       )
-      Text(text = "       Modifier.width(16.dp).height(12.dp).background(Color.Gray)")
+      Text(
+        text = "Modifier.width(16.dp).height(12.dp).background(Color.Gray)",
+        color = MaterialTheme.colors.primaryVariant,
+        fontWeight = Companion.Bold,
+      )
+      Spacer(modifier = Modifier.height(8.dp))
       Text(text = "This will modify the width AND height AND background color.")
       Row {
         Button(onClick = { showNextStep() }) {
@@ -119,7 +138,11 @@ class StylesFour : TutorialSubStepBlockState {
       Text(
         text = "Add a constructor to your Row composable and inside the constructor set the modifier value like this:"
       )
-      Text(text = "       Row(modifier = Modifier.height(64.dp))")
+      Text(
+        text = "Row(modifier = Modifier.height(64.dp))",
+        fontWeight = FontWeight.Bold,
+        color = MaterialTheme.colors.primaryVariant,
+      )
       Text(
         text = "You can change the height value to whatever you prefer - rebuild the app to see how it changes when you change the value."
       )
@@ -168,10 +191,13 @@ class StylesSix : TutorialSubStepBlockState {
       Text(
         text = "In addition to modifiers, composables also have special style options that are specific to each composable depending on its intended purpose."
       )
+      Spacer(modifier = Modifier.height(8.dp))
       Text(text = "One of these additional style options for Rows and Columns is alignment.")
+      Spacer(modifier = Modifier.height(8.dp))
       Text(
         text = "We used Row composables to build our todo list item rows and you can see that all the items in the row are pulled up to the top of the row rather than centered."
       )
+      Spacer(modifier = Modifier.height(8.dp))
       Text(
         text = "We would say in this case that the vertical alignment of the Row is top justified."
       )
@@ -203,10 +229,10 @@ class StylesSeven : TutorialSubStepBlockState {
         text = "In the constructor of Row, set the value of verticalAlignment to Alignment.CenterVertically"
       )
       Text(text = "This looks like:")
-      Text(text = "     Row(")
-      Text(text = "         modifier = Modifier.height(64.dp),")
-      Text(text = "         verticalAlignment = Alignment.CenterVertically,")
-      Text(text = "     )")
+      Text(text = "     Row(", fontWeight = FontWeight.Bold, color = MaterialTheme.colors.primaryVariant)
+      Text(text = "         modifier = Modifier.height(64.dp),", fontWeight = FontWeight.Bold, color = MaterialTheme.colors.primaryVariant)
+      Text(text = "         verticalAlignment = Alignment.CenterVertically,", fontWeight = FontWeight.Bold, color = MaterialTheme.colors.primaryVariant)
+      Text(text = "     )", fontWeight = FontWeight.Bold, color = MaterialTheme.colors.primaryVariant)
       Text(text = "Rebuild the app and see how it changes.")
       Row {
         Button(onClick = { showNextStep() }) {
@@ -240,7 +266,7 @@ class StylesEight : TutorialSubStepBlockState {
         /** TODO */
       }
       Text(text = "Try adding a new color to that file with your own hex code something like:")
-      Text(text = "     val MyColor = Color(0xFFXXXXXX)")
+      Text(text = "     val MyColor = Color(0xFFXXXXXX)", fontWeight = FontWeight.Bold)
       Text(
         text = "Replace the X's with your chosen hex code and name the value whatever you want."
       )
@@ -267,9 +293,11 @@ class StylesNine : TutorialSubStepBlockState {
       Text(
         text = "If you look through the code to find the composable that creates the title bar, you’ll see that it uses “primary” as its color - that’s why it changed when you updated what color primary was set to."
       )
+      Spacer(modifier = Modifier.height(8.dp))
       Text(
-        text = "This is why Themes can make our lives much easier - if you have main color you want your app to use and you have 20 things in your app that are set to that color using its hex value directly, if you decide you want to change that color you will have to update every hex value in all 20 places. "
+        text = "This is why Themes can make our lives much easier - if you have main colors you want your app to use and you have 20 things in your app that are set to that color using its hex value directly, if you decide you want to change that color you will have to update every hex value in all 20 places. "
       )
+      Spacer(modifier = Modifier.height(8.dp))
       Text(
         text = "If you use a theme, and make all 20 of those things use whatever color primary is set to, then if you want to change that color, you only need to update it once."
       )
@@ -325,10 +353,13 @@ class StylesEleven : TutorialSubStepBlockState {
   ) {
     TutorialStepCard(title = "Adding Styles") {
       Text(text = "Rebuild the app. Is your Icon the primary color now?")
+      HelpButton("my icon color didn't change") {
+        onHelpRequest { ColorNotUpdatingHint() }
+      }
       Text(
         text = "We still want it to be green though so go back to your Color.kt file and add this color to the file:"
       )
-      Text(text = "     val CheckMarkGreen = Color(0xFF008000)")
+      Text(text = "     val CheckMarkGreen = Color(0xFF008000)", fontWeight = FontWeight.Bold)
       Row {
         Button(onClick = { showNextStep() }) {
           Text(text = "Next")
@@ -346,10 +377,13 @@ class StylesTwelve : TutorialSubStepBlockState {
   ) {
     TutorialStepCard(title = "Adding Styles") {
       Text(text = "Go back to your TodoListItem.")
+      Spacer(modifier = Modifier.height(8.dp))
       Text(text = "Set the tint value to CheckMarkGreen")
+      Spacer(modifier = Modifier.height(8.dp))
       Text(
-        text = "It will probably be red, if you hover over the red word, you will see a menu pop up with the option to import. Click import when this pops up."
+        text = "The text will probably be red, if you hover over the red word, you will see a menu pop up with the option to import. Click import when this pops up."
       )
+      Spacer(modifier = Modifier.height(8.dp))
       Text(text = "Rebuild the app. Is your checkmark green now?")
       Row {
         Button(onClick = { showNextStep() }) {
