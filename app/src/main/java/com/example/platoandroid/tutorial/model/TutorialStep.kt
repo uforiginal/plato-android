@@ -13,6 +13,7 @@ import com.example.platoandroid.tutorial.ui.displaysteps.nine_activites.Activiti
 import com.example.platoandroid.tutorial.ui.displaysteps.seven_architechture.ArchitechtureTutorialStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.six_textfields.TextFieldsTutorialStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.three_buttons.ButtonsTutorialStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.two_datatypes.DataTypesTutorialStepUiState
 
 sealed class TutorialStep {
   open val id: String = DEFAULT_STEP_ID
@@ -88,18 +89,26 @@ sealed class TutorialStep {
   }
 
   data class LearningComposeStyles(
-    override val nextStep: TutorialStep = LearningButtonHandlers(),
+    override val nextStep: TutorialStep = LearningDataTypes(),
     override val id: String = COMPOSE_STYLES_STEP_ID,
   ) : TutorialStep() {
     override val previousStep: TutorialStep = LearningComposeBasics(this)
     override fun getUiState(): TutorialStepUiState = ComposeStylesTutorialStepUiState()
   }
 
+  data class LearningDataTypes(
+    override val nextStep: TutorialStep = LearningButtonHandlers(),
+    override val id: String = DATA_TYPES_STEP_ID,
+  ) : TutorialStep() {
+    override val previousStep: TutorialStep = LearningComposeBasics(this)
+    override fun getUiState(): TutorialStepUiState = DataTypesTutorialStepUiState()
+  }
+
   data class LearningButtonHandlers(
     override val nextStep: TutorialStep = LearningState(),
     override val id: String = BUTTONS_STEP_ID,
   ) : TutorialStep() {
-    override val previousStep: TutorialStep = LearningComposeStyles(this)
+    override val previousStep: TutorialStep = LearningDataTypes(this)
     override fun getUiState(): TutorialStepUiState = ButtonsTutorialStepUiState()
   }
 
@@ -156,6 +165,7 @@ sealed class TutorialStep {
     const val INTRO_STEP_ID = "INTRO_STEP_ID"
     const val COMPOSE_BASICS_STEP_ID = "COMPOSE_BASICS_STEP_ID"
     const val COMPOSE_STYLES_STEP_ID = "COMPOSE_STYLES_STEP_ID"
+    const val DATA_TYPES_STEP_ID = "DATA_TYPES_STEP_ID"
     const val BUTTONS_STEP_ID = "BUTTONS_STEP_ID"
     const val STATE_STEP_ID = "STATE_STEP_ID"
     const val VIEW_MODELS_STEP_ID = "VIEW_MODELS_STEP_ID"
@@ -173,6 +183,7 @@ sealed class TutorialStep {
         INTRO_STEP_ID -> Intro().withSubStep(subStepId)
         COMPOSE_BASICS_STEP_ID -> LearningComposeBasics().withSubStep(subStepId)
         COMPOSE_STYLES_STEP_ID -> LearningComposeStyles().withSubStep(subStepId)
+        DATA_TYPES_STEP_ID -> LearningDataTypes().withSubStep(subStepId)
         BUTTONS_STEP_ID -> LearningButtonHandlers().withSubStep(subStepId)
         STATE_STEP_ID -> LearningState().withSubStep(subStepId)
         VIEW_MODELS_STEP_ID -> LearningViewModels().withSubStep(subStepId)

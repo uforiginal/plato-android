@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.platoandroid.ui.TodoList
 import com.example.platoandroid.ui.TutorialBlock
 import com.example.platoandroid.ui.theme.PlatoAndroidTheme
 
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
              * it's just so you can leave helpful notes like this one :)
              */
             // YOUR TEST AREA vvv
-
+            TodoList(title = "My Todo List")
             // ^^^^^ add above ^^^^^
             // ^^^ YOUR TEST AREA
           }
