@@ -1,5 +1,6 @@
 package com.example.platoandroid.ui
 
+import android.content.SharedPreferences
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
@@ -22,7 +23,17 @@ import androidx.lifecycle.ViewModel
  * functionality it provides.
  */
 class TodoListViewModel(
-  // val savedStateHandle: SavedStateHandle,
+  /**
+   * sharedPreferences & savedStateHandle are two tools we can use
+   * for managing state we want to persist through certain lifecycle
+   * state of our app. We will talk more about what lifecycle states
+   * there are later on in the tutorial.
+   *
+   * These values will be provided by the view when constructing it's
+   * viewmodel.
+   */
+  private val sharedPreferences: SharedPreferences,
+  private val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
   /**
    * This is the body of our view model where all the logic will live.

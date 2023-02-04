@@ -55,3 +55,35 @@ class CreateYourOwnComposableSubStepUiState : TutorialSubStepBlockState {
     }
   }
 }
+
+class CreateYourOwnComposablePartTwoSubStepUiState : TutorialSubStepBlockState {
+  @Composable
+  override fun displayBlock(onHelpRequest: (request: @Composable () -> Unit) -> Unit, showNextStep: () -> Unit) {
+    TutorialStepCard {
+      Text(
+        text = "Jetpack Compose",
+        color = MaterialTheme.colors.secondary,
+        style = MaterialTheme.typography.subtitle2
+      )
+      Text(text = "For the rest of the tutorial, we will be working with our TodoList composable so you can delete the Text, Button & othe composables you may have added in MainActivity so only this composable is left:")
+      Text(
+        text = "TodoList(title = \"My Todo List\")",
+        color = MaterialTheme.colors.primaryVariant,
+        style = MaterialTheme.typography.subtitle2,
+        modifier = Modifier.padding(start = 16.dp)
+      )
+      Row {
+        Button(onClick = { showNextStep() }) {
+          Text(text = "Next")
+        }
+        Spacer(modifier = Modifier.width(8.dp))
+        Button(
+          onClick = { onHelpRequest { CreateYourOwnComposableHint() } },
+          colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
+        ) {
+          Text(text = "I need a hint")
+        }
+      }
+    }
+  }
+}

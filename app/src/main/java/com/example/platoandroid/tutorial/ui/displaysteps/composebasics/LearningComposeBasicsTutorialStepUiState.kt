@@ -13,6 +13,8 @@ import com.example.platoandroid.tutorial.model.TutorialStepUiState
 import com.example.platoandroid.tutorial.model.TutorialSubStep
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeOverviewSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.CreateYourOwnComposablePartTwoSubStepUiState
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.CreateYourOwnComposableSubStepTwoUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.CreateYourOwnComposableSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.TryAComposablePartTwoSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.TryAComposableSubStepUiState
@@ -73,5 +75,7 @@ class LearningComposeBasicsTutorialStepUiState : TutorialStepUiState {
     TryAComposablePartTwoSubStepUiState(),
     UsingComposeDocumentationSubStepUiState(),
     CreateYourOwnComposableSubStepUiState(),
+    CreateYourOwnComposableSubStepTwoUiState(),
+    CreateYourOwnComposablePartTwoSubStepUiState(),
   )
 }

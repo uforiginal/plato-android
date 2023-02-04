@@ -40,13 +40,14 @@ fun TutorialNavBar(onRestart: () -> Unit, onMenuClicked: () -> Unit, onBackPress
           Text(text = "Restart")
         }
         Spacer(modifier = Modifier.width(8.dp))
-        Button(
-          onClick = { onMenuClicked() },
-          shape = CircleShape,
-          colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
-        ) {
-          Text(text = "Menu")
-        }
+        // TODO: Add the ability to jump between steps
+        // Button(
+        //   onClick = { onMenuClicked() },
+        //   shape = CircleShape,
+        //   colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
+        // ) {
+        //   Text(text = "Menu")
+        // }
       }
     )
   }
