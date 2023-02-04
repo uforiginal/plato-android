@@ -1,4 +1,4 @@
-package com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.substeps
+package com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels.substeps
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -22,13 +22,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.font.FontWeight.Companion
 import androidx.compose.ui.unit.dp
 import androidx.core.content.res.ResourcesCompat
 import com.example.platoandroid.R
 import com.example.platoandroid.tutorial.model.TutorialSubStepBlockState
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
-import com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.help.ProjectFileStructurePaneHint
+import com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels.help.ProjectFileStructurePaneHint
 import com.example.platoandroid.tutorial.ui.displaysteps.help.HelpButton
 import com.example.platoandroid.tutorial.ui.displaysteps.help.HowToSearchAFileName
 import com.example.platoandroid.tutorial.ui.displaysteps.help.WhatIsABestPractice

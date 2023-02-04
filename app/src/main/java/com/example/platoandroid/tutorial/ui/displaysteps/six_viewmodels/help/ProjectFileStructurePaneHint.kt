@@ -1,4 +1,4 @@
-package com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.help
+package com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels.help
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Text

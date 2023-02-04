@@ -1,4 +1,4 @@
-package com.example.platoandroid.tutorial.ui.displaysteps.four_state
+package com.example.platoandroid.tutorial.ui.displaysteps.five_state
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -10,17 +10,17 @@ import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialStepUiState
 import com.example.platoandroid.tutorial.model.TutorialSubStep
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepEight
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepEleven
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepFive
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepFour
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepNine
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepOne
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepSeven
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepSix
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepTen
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepThree
-import com.example.platoandroid.tutorial.ui.displaysteps.four_state.substeps.StateSubStepTwo
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepEight
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepEleven
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepFive
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepFour
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepNine
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepOne
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepSeven
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepSix
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepTen
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepThree
+import com.example.platoandroid.tutorial.ui.displaysteps.five_state.substeps.StateSubStepTwo
 
 class StateTutorialStepUiState : TutorialStepUiState {
   @Composable

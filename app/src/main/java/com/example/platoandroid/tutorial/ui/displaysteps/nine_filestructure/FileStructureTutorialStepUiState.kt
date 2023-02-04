@@ -1,4 +1,4 @@
-package com.example.platoandroid.tutorial.ui.displaysteps.eight_filestructure
+package com.example.platoandroid.tutorial.ui.displaysteps.nine_filestructure
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height

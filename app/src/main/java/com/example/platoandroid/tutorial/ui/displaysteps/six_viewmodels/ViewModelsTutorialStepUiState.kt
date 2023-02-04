@@ -1,4 +1,4 @@
-package com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels
+package com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -10,12 +10,12 @@ import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialStepUiState
 import com.example.platoandroid.tutorial.model.TutorialSubStep
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
-import com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.substeps.ViewModelSupStepFive
-import com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.substeps.ViewModelSupStepFour
-import com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.substeps.ViewModelSupStepOne
-import com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.substeps.ViewModelSupStepSix
-import com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.substeps.ViewModelSupStepThree
-import com.example.platoandroid.tutorial.ui.displaysteps.five_viewmodels.substeps.ViewModelSupStepTwo
+import com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels.substeps.ViewModelSupStepFive
+import com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels.substeps.ViewModelSupStepFour
+import com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels.substeps.ViewModelSupStepOne
+import com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels.substeps.ViewModelSupStepSix
+import com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels.substeps.ViewModelSupStepThree
+import com.example.platoandroid.tutorial.ui.displaysteps.six_viewmodels.substeps.ViewModelSupStepTwo
 
 class ViewModelsTutorialStepUiState : TutorialStepUiState {
   @Composable

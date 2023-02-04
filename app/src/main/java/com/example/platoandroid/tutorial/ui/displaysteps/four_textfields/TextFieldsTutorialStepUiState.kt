@@ -1,4 +1,4 @@
-package com.example.platoandroid.tutorial.ui.displaysteps.six_textfields
+package com.example.platoandroid.tutorial.ui.displaysteps.four_textfields
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
