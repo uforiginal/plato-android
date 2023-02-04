@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
              * it's just so you can leave helpful notes like this one :)
              */
             // YOUR TEST AREA vvv
-            TodoList(title = "My Todo List")
+
             // ^^^^^ add above ^^^^^
             // ^^^ YOUR TEST AREA
           }
