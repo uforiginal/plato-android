@@ -27,7 +27,7 @@ class CreateYourOwnComposableSubStepUiState : TutorialSubStepBlockState {
         style = MaterialTheme.typography.subtitle2
       )
       Text(text = "Now that you know how to add composables, you're going to make one of your own.")
-      Text(text = "We started an example for you called TodoList. To start, we are going to add the composeable we have already started for you. Add the TodoList component to your test area by adding this code:")
+      Text(text = "We started an example for you called TodoList. To start, we are going to add the composeable we have already started for you to our MainActivity where you have added your other composables. Add the TodoList component to your test area by adding this code:")
       Text(
         text = "TodoList(title = \"My Todo List\")",
         color = MaterialTheme.colors.primaryVariant,

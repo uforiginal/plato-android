@@ -17,8 +17,8 @@ fun UsingComposeDocumentationHint() {
     Spacer(modifier = Modifier.height(16.dp))
     Text(text = "In the middle column, you'll see individual component names in blue text. If you click on any of those, it will take you to more detailed documentation on how to implement that specific component.")
     Spacer(modifier = Modifier.height(16.dp))
-    Text(text = "If your struggling or having trouble picking a component to add, take a look at Checkbox.")
+    Text(text = "If you're struggling or having trouble picking a component to add, take a look at Checkbox.")
     Spacer(modifier = Modifier.height(16.dp))
-    Text(text = "If your still struggling, don't forget to ask for help :)")
+    Text(text = "If you're still struggling, don't forget to ask for help :)")
   }
 }

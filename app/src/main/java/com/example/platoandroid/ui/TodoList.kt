@@ -4,7 +4,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 
 /**
- * TodoList & Title here are examples of custom composables.
+ * TodoList & Title below are examples of custom composables.
  * Below them, where the "Create a new composable here" comment is,
  * you are going to practice adding another custom composable.
  *

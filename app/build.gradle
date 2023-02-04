@@ -46,6 +46,37 @@ android {
 }
 
 dependencies {
+  /**
+   * TAG FOR LEARNING ABOUT GRADLE
+   * This is a module gradle file. For this app (and most likely for your
+   * first app) we only have one module (:app) so we will only have this
+   * single module level gradle file.
+   *
+   * If you do a file search for "build.gradle", you'll notice there is one
+   * other gradle file in this project - that gradle file is our project level
+   * gradle file that handles configurations applying to all modules in our app.
+   * Since managing multiple modules is a more advanced topic, we won't talk much
+   * about managing multiple modules or why you need separate modules in certain
+   * cases but you can always learn more on your own by reading Android's documentation:
+   * https://developer.android.com/topic/modularization
+   *
+   * For now, what is important to know, is that gradle is your dependency manager
+   * and you tell gradle what dependencies you want it to manage here!
+   * Reference Android's documentation about dependencies for any questions you may run into:
+   * https://developer.android.com/studio/build/dependencies
+   * If you want to learn more about how gradle works, read through this documentation:
+   * https://docs.gradle.org/current/userguide/dependency_management.html
+   *
+   * Each of the items below is an "address" to tell gradle where the dependency
+   * we want to use lives in the online library repository (the place that stores
+   * all the libraries online) so that it can go to the online repository and download
+   * the code you want to use in your project.
+   *
+   * Don't worry too much about how online library repositories work, just know that
+   * gradle takes care of it. If you want to learn more, the most popular repository is
+   * google maven (https://maven.google.com/web/index.html) and you can read more about it here:
+   * https://docs.gradle.org/current/userguide/dependency_management.html#sec:repository-types
+   */
   implementation 'android.arch.lifecycle:livedata:1.1.1'
   implementation "androidx.navigation:navigation-compose:$nav_version"
   implementation 'androidx.core:core-ktx:1.7.0'
