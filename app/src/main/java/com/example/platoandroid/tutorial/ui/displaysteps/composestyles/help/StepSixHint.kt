@@ -8,6 +8,14 @@ import androidx.compose.runtime.Composable
 @Composable
 fun StepSixHint() {
   Column {
-    Text(text = "todo")
+    Text(text = "@Composable\n" +
+      "fun TodoListRow(taskName: String) {\n" +
+      "  Row(\n" +
+      "    modifier = Modifier.height(64.dp),\n" +
+      "    verticalAlignment = Alignment.CenterVertically,\n" +
+      "  ) {\n" +
+      "    Text(text = taskName)\n" +
+      "  }\n" +
+      "}")
   }
 }

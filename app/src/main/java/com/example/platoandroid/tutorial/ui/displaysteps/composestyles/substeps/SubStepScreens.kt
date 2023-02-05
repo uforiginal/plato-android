@@ -16,11 +16,15 @@ import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialSubStepBlockState
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.help.ColorNotUpdatingHint
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.help.FindingWhatPropertiesACompoableHas
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.help.StepFourHint
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.help.StepSixHint
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.help.StepTwelveHint
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.help.WhatAreColorHexCodes
 import com.example.platoandroid.tutorial.ui.displaysteps.help.HelpButton
 import com.example.platoandroid.tutorial.ui.displaysteps.help.WhatDoesDpMean
 import com.example.platoandroid.tutorial.ui.displaysteps.help.WhatIsAComposable
+import com.example.platoandroid.tutorial.ui.displaysteps.help.WhatIsAConstructor
 import com.example.platoandroid.tutorial.ui.displaysteps.help.WhatIsAnExtensionFunction
 
 class StylesOne : TutorialSubStepBlockState {
@@ -31,7 +35,7 @@ class StylesOne : TutorialSubStepBlockState {
   ) {
     TutorialStepCard(title = "Adding Styles") {
       Text(
-        text = "In Compose, most composables have something we call “Modifiers” (remember we saw this when adding the Spacer in the previous step)"
+        text = "In Compose, most composables have something we call “Modifiers”"
       )
       HelpButton("remind me what composables are") {
         onHelpRequest { WhatIsAComposable() }
@@ -60,19 +64,19 @@ class StylesTwo : TutorialSubStepBlockState {
     showNextStep: () -> Unit
   ) {
     TutorialStepCard(title = "Adding Styles") {
-      Text(
-        text = "To create a new modifier, you need to pick at least one element you want to modify and then on the class name Modifier, call the appropriate extension function."
-      )
-      HelpButton("what is an extension function?") {
-        onHelpRequest { WhatIsAnExtensionFunction() }
-      }
-      Text(
-        text = "There are some fancy reasons why we can call a function directly on this class name without invoking an instance of the Modifier class, but we aren’t going to get into that now.There are some fancy reasons why we can call a function directly on this class name without invoking an instance of the Modifier class, but we aren’t going to get into that now."
-      )
-      Text(
-        text = "You can visit Androids documentation if you want to understand more about that."
-      )
-      Text(text = "All you need to know for now is this looks like:")
+      // Text(
+      //   text = "To create a new modifier, you need to pick at least one element you want to modify and then on the class name Modifier, call the appropriate extension function."
+      // )
+      // HelpButton("what is an extension function?") {
+      //   onHelpRequest { WhatIsAnExtensionFunction() }
+      // }
+      // Text(
+      //   text = "There are some fancy reasons why we can call a function directly on this class name without invoking an instance of the Modifier class, but we aren’t going to get into that now.There are some fancy reasons why we can call a function directly on this class name without invoking an instance of the Modifier class, but we aren’t going to get into that now."
+      // )
+      // Text(
+      //   text = "You can visit Androids documentation if you want to understand more about that."
+      // )
+      Text(text = "To create a modifier, you will write something that looks like:")
       Text(
         text = "       Modifier.width(16.dp)",
         fontWeight = Companion.Bold,
@@ -98,17 +102,18 @@ class StylesThree : TutorialSubStepBlockState {
     showNextStep: () -> Unit
   ) {
     TutorialStepCard(title = "Adding Styles") {
-      Text(
-        text = "In the previous example, we called the “width” extension function. You’ll remember that function return something - in this case, the modifier extension functions return the modifier itself."
-      )
-      Spacer(modifier = Modifier.height(8.dp))
-      Text(
-        text = "Because of this, we can call another extension function on the end of another function because if will be calling the function on the object that was returned by the previous one."
-      )
-      Spacer(modifier = Modifier.height(8.dp))
-      Text(
-        text = "If that confuses you - don’t worry too much about it. The important take away is you can write something like this:"
-      )
+      // Text(
+      //   text = "In the previous example, we called the “width” extension function. You’ll remember that function return something - in this case, the modifier extension functions return the modifier itself."
+      // )
+      // Spacer(modifier = Modifier.height(8.dp))
+      // Text(
+      //   text = "Because of this, we can call another extension function on the end of another function because if will be calling the function on the object that was returned by the previous one."
+      // )
+      // Spacer(modifier = Modifier.height(8.dp))
+      // Text(
+      //   text = "If that confuses you - don’t worry too much about it. The important take away is you can write something like this:"
+      // )
+      Text(text = "If want to modify multiple things about a composable, we can `chain` the modifier values like this:")
       Text(
         text = "Modifier.width(16.dp).height(12.dp).background(Color.Gray)",
         color = MaterialTheme.colors.primaryVariant,
@@ -136,7 +141,7 @@ class StylesFour : TutorialSubStepBlockState {
         text = "Let’s practice using modifiers. Let’s add a standard height to our todo list rows."
       )
       Text(
-        text = "Add a constructor to your Row composable and inside the constructor set the modifier value like this:"
+        text = "Add a constructor to your Row composable (that you added inside of TodoListRow) and inside the constructor set the modifier value like this:"
       )
       Text(
         text = "Row(modifier = Modifier.height(64.dp))",
@@ -263,13 +268,38 @@ class StylesEight : TutorialSubStepBlockState {
         text = "This is the file where you can define colors you want to reuse in your app using hex codes."
       )
       HelpButton("what are hex code colors") {
-        /** TODO */
+        onHelpRequest { WhatAreColorHexCodes() }
       }
       Text(text = "Try adding a new color to that file with your own hex code something like:")
       Text(text = "     val MyColor = Color(0xFFXXXXXX)", fontWeight = FontWeight.Bold)
       Text(
         text = "Replace the X's with your chosen hex code and name the value whatever you want."
       )
+      Row {
+        Button(onClick = { showNextStep() }) {
+          Text(text = "Next")
+        }
+      }
+    }
+  }
+}
+
+class StylesEightHalf : TutorialSubStepBlockState {
+  @Composable
+  override fun displayBlock(
+    onHelpRequest: (request: @Composable () -> Unit) -> Unit,
+    showNextStep: () -> Unit
+  ) {
+    TutorialStepCard(title = "Adding Styles") {
+      Text(text = "Now we want to apply the color we just created somewhere.")
+      Text(text = "You can either apply the color directly to a composable - or we can set the color to many components at once by using something called `Themes`")
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(text = "Themes let us set us set individual composables to use a category of color rather than a specific color. This allows us to change the color value of a theme category and all of the components using that theme will change at once.")
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(text = "To test this, open the file named Theme.kt")
+      Text(text = "Look for the LightColorPalette and set the `primary` param to your MyColor value you just created.")
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(text = "Rebuild the app and see what things change color!")
       Row {
         Button(onClick = { showNextStep() }) {
           Text(text = "Next")
@@ -321,13 +351,13 @@ class StylesTen : TutorialSubStepBlockState {
       Text(text = "Going back to your Todo list items, we want to make the checkmark icon green.")
       Text(text = "Icons have a property called “tint” that takes a color value.")
       HelpButton("how do I find what properties a composable has?") {
-        /** TODO */
+        onHelpRequest { FindingWhatPropertiesACompoableHas() }
       }
       Text(
         text = "In the constructor of Icon, after the parameters that are already provided, assign the property “tint” to MaterialTheme.colors.primary"
       )
       HelpButton("remind me what a constructor is") {
-        /** TODO */
+        onHelpRequest { WhatIsAConstructor() }
       }
       Row {
         Button(onClick = { showNextStep() }) {
@@ -376,7 +406,7 @@ class StylesTwelve : TutorialSubStepBlockState {
     showNextStep: () -> Unit
   ) {
     TutorialStepCard(title = "Adding Styles") {
-      Text(text = "Go back to your TodoListItem.")
+      Text(text = "Go back to your TodoListRow.")
       Spacer(modifier = Modifier.height(8.dp))
       Text(text = "Set the tint value to CheckMarkGreen")
       Spacer(modifier = Modifier.height(8.dp))
@@ -391,7 +421,7 @@ class StylesTwelve : TutorialSubStepBlockState {
         }
         Spacer(modifier = Modifier.width(8.dp))
         Button(
-          onClick = { onHelpRequest { /** TODO */ } },
+          onClick = { onHelpRequest { StepTwelveHint() } },
           colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
         ) {
           Text(text = "No")

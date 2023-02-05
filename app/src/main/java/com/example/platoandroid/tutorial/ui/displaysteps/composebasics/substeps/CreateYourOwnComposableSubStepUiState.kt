@@ -2,6 +2,7 @@ package com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
@@ -66,22 +67,17 @@ class CreateYourOwnComposablePartTwoSubStepUiState : TutorialSubStepBlockState {
         style = MaterialTheme.typography.subtitle2
       )
       Text(text = "For the rest of the tutorial, we will be working with our TodoList composable so you can delete the Text, Button & othe composables you may have added in MainActivity so only this composable is left:")
+      Spacer(modifier = Modifier.height(8.dp))
       Text(
         text = "TodoList(title = \"My Todo List\")",
         color = MaterialTheme.colors.primaryVariant,
         style = MaterialTheme.typography.subtitle2,
         modifier = Modifier.padding(start = 16.dp)
       )
+      Spacer(modifier = Modifier.height(8.dp))
       Row {
         Button(onClick = { showNextStep() }) {
           Text(text = "Next")
-        }
-        Spacer(modifier = Modifier.width(8.dp))
-        Button(
-          onClick = { onHelpRequest { CreateYourOwnComposableHint() } },
-          colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
-        ) {
-          Text(text = "I need a hint")
         }
       }
     }

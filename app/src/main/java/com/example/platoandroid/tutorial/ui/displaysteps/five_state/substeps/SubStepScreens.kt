@@ -53,7 +53,7 @@ class StateSubStepTwo : TutorialSubStepBlockState {
     showNextStep: () -> Unit
   ) {
     TutorialStepCard(title = "State") {
-      Text(text = "Inside the composable function called TodoListItem, add a variable called isComplete of type Boolean.")
+      Text(text = "Inside the composable function called TodoListRow, add a variable called isComplete of type Boolean.")
       HelpButton("remind me what a variable is") {
         onHelpRequest { WhatIsAVariable() }
       }

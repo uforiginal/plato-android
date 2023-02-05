@@ -18,6 +18,10 @@ val VariantBlue = Color(0xFF007AFF)
  * prepended with 0xFF - for example, look at VariantBlue above.
  * The hex code for VariantBlue = 007AFF
  * So the color value we pass for VariantBlue = 0xFF007AFF
+ *
+ * You can use websites like this one to find the hex code
+ * for different colors:
+ * https://htmlcolorcodes.com/color-picker/
  */
 // Add your color here vvv
 

@@ -11,6 +11,7 @@ import com.example.platoandroid.tutorial.model.TutorialStepUiState
 import com.example.platoandroid.tutorial.model.TutorialSubStep
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesEight
+import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesEightHalf
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesEleven
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesFive
 import com.example.platoandroid.tutorial.ui.displaysteps.composestyles.substeps.StylesFour
@@ -45,6 +46,7 @@ class ComposeStylesTutorialStepUiState : TutorialStepUiState {
     StylesSix(),
     StylesSeven(),
     StylesEight(),
+    StylesEightHalf(),
     StylesNine(),
     StylesTen(),
     StylesEleven(),
