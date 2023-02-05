@@ -12,6 +12,17 @@ import androidx.compose.ui.unit.dp
 import com.example.platoandroid.tutorial.model.TutorialStepUiState
 import com.example.platoandroid.tutorial.model.TutorialSubStep
 import com.example.platoandroid.tutorial.ui.TutorialStepCard
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepEight
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepEleven
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepFive
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepFour
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepNine
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepOne
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepSeven
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepSix
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepTen
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepThree
+import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeBasicsSubStepTwo
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.ComposeOverviewSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.CreateYourOwnComposablePartTwoSubStepUiState
 import com.example.platoandroid.tutorial.ui.displaysteps.composebasics.substeps.CreateYourOwnComposableSubStepTwoUiState
@@ -77,5 +88,16 @@ class LearningComposeBasicsTutorialStepUiState : TutorialStepUiState {
     CreateYourOwnComposableSubStepUiState(),
     CreateYourOwnComposableSubStepTwoUiState(),
     CreateYourOwnComposablePartTwoSubStepUiState(),
+    ComposeBasicsSubStepOne(),
+    ComposeBasicsSubStepTwo(),
+    ComposeBasicsSubStepThree(),
+    ComposeBasicsSubStepFour(),
+    ComposeBasicsSubStepFive(),
+    ComposeBasicsSubStepSix(),
+    ComposeBasicsSubStepSeven(),
+    ComposeBasicsSubStepEight(),
+    ComposeBasicsSubStepNine(),
+    ComposeBasicsSubStepTen(),
+    ComposeBasicsSubStepEleven(),
   )
 }

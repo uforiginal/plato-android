@@ -167,6 +167,33 @@ class StylesFour : TutorialSubStepBlockState {
   }
 }
 
+class StylesFourHalf : TutorialSubStepBlockState {
+  @Composable
+  override fun displayBlock(
+    onHelpRequest: (request: @Composable () -> Unit) -> Unit,
+    showNextStep: () -> Unit
+  ) {
+    TutorialStepCard(title = "Adding Styles") {
+      Text(text = "Your todo list is coming together!")
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(text = "You'll notice our rows are touching the left edge of the screen - that doesn't look very good so let's use a modifier to add some padding.")
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(
+        text = "In the constructor for the Column around our entire todo list in the TodoList composable, add a modifier that looks like this:"
+      )
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(text = "Column(\n" +
+        "    modifier = Modifier.padding(12.dp)\n" +
+        "  )")
+      Row {
+        Button(onClick = { showNextStep() }) {
+          Text(text = "Next")
+        }
+      }
+    }
+  }
+}
+
 class StylesFive : TutorialSubStepBlockState {
   @Composable
   override fun displayBlock(
@@ -425,6 +452,37 @@ class StylesTwelve : TutorialSubStepBlockState {
           colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
         ) {
           Text(text = "No")
+        }
+      }
+    }
+  }
+}
+
+class StylesThirteen : TutorialSubStepBlockState {
+  @Composable
+  override fun displayBlock(
+    onHelpRequest: (request: @Composable () -> Unit) -> Unit,
+    showNextStep: () -> Unit
+  ) {
+    TutorialStepCard(title = "Adding Styles") {
+      Text(text = "Nice! Your todo list is looking better!")
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(text = "Let's look at some text styles next we can use to make the title text on our todo list look more like a title.")
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(
+        text = "To do this, find the Title composable in your TodoList.kt file and update the Text composable to look like this:"
+      )
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(text = "Text(\n" +
+        "    text = \"\$title\",\n" +
+        "    style = MaterialTheme.typography.h3,\n" +
+        "  )")
+      Spacer(modifier = Modifier.height(8.dp))
+      Text(text = "Rebuild the app and see how the title changes.")
+      Spacer(modifier = Modifier.height(8.dp))
+      Row {
+        Button(onClick = { showNextStep() }) {
+          Text(text = "Next")
         }
       }
     }

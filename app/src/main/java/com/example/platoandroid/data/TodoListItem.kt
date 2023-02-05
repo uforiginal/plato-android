@@ -5,7 +5,7 @@ package com.example.platoandroid.data
  * This is a data class meant to represent pieces of complex data &
  * package all the values relating to a specific concept in our app
  * in one data type.
- * Data class are denoted by the keyword `data` prefix before `class`
+ * Data classes are denoted by the keyword `data` prefix before `class`
  */
 
 /**
